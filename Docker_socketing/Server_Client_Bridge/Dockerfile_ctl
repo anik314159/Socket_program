@@ -1,0 +1,6 @@
+FROM python:latest
+ADD control_server.py /server/
+WORKDIR /server/
+EXPOSE 9898
+CMD ["python3","/server/control_server.py"]
+

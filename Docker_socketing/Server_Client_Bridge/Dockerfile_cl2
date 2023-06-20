@@ -1,0 +1,10 @@
+FROM python:latest
+
+ADD client2.py /client/
+
+WORKDIR /client/
+
+EXPOSE 8085
+
+CMD ["python3","/client/client2.py"]
+
