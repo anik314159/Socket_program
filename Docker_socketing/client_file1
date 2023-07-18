@@ -1,0 +1,14 @@
+FROM python:latest 
+ADD ../the_code.py /client/ 
+ADD ../ControlServerClass.py /client/ 
+ADD ../ClientClass.py /client/ 
+ADD ../models/Fire-64x64-color-v7-soft.h5 /client/ 
+COPY ../images/image1.jpg /client/image.jpg 
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y 
+RUN pip install --upgrade pip 
+RUN pip install tensorflow 
+RUN pip install numpy 
+RUN pip install opencv-python 
+RUN pip install keras 
+WORKDIR /client/ 
+CMD ["python3","/client/the_code.py"] 
